@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://taorcd4b5hql"]
+
+[ext_resource type="Texture2D" uid="uid://bt0pwaf7pffh5" path="res://sprites/Tiles/Default/block_blue.png" id="1_uqncu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(65, 65)
+
+[node name="Piso" type="StaticBody2D" unique_id=1589094114]
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1195101885]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=915454464]
+texture = ExtResource("1_uqncu")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b3ohpojupv0k4"]
+
+[ext_resource type="Script" uid="uid://b811yngaf1vx7" path="res://scripts/vida_extra.gd" id="1_7kq1g"]
+[ext_resource type="Texture2D" uid="uid://df4yor7pwvjc8" path="res://sprites/Tiles/Double/heart.png" id="1_8wj8h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[node name="VidaExtra" type="Area2D" unique_id=641541097]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_7kq1g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2084643193]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1259519600]
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("1_8wj8h")

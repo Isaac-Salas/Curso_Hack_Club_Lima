@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://cbfl02oewahsw"]
+
+[ext_resource type="Script" uid="uid://cvnsnmkv6xoqw" path="res://escenas/jugador_plataformer.gd" id="1_glrvs"]
+[ext_resource type="Texture2D" uid="uid://cjx6hmct4ex25" path="res://sprites/Characters/Default/character_green_front.png" id="2_6wjgb"]
+[ext_resource type="Texture2D" uid="uid://lrr6aklu3lds" path="res://sprites/Characters/Default/character_green_hit.png" id="2_7oex1"]
+[ext_resource type="Texture2D" uid="uid://bvomrh2rk4l2d" path="res://sprites/Characters/Default/character_green_duck.png" id="3_16hu1"]
+[ext_resource type="PackedScene" uid="uid://taorcd4b5hql" path="res://escenas/piso.tscn" id="3_glrvs"]
+[ext_resource type="PackedScene" uid="uid://pbqjy20gh7rh" path="res://escenas/item.tscn" id="4_v12yk"]
+[ext_resource type="AudioStream" uid="uid://bcwo2til0jagu" path="res://sfx/golpe.wav" id="5_4vydk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v12yk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7oex1")
+}],
+"loop": 1,
+"name": &"golpe",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6wjgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_16hu1")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glrvs"]
+radius = 40.0
+height = 94.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(80, 96)
+
+[node name="Node2D" type="Node2D" unique_id=32801320]
+
+[node name="Jugador" type="CharacterBody2D" parent="." unique_id=478410620]
+position = Vector2(504, 352)
+script = ExtResource("1_glrvs")
+
+[node name="Textura" type="AnimatedSprite2D" parent="Jugador" unique_id=1486380938]
+sprite_frames = SubResource("SpriteFrames_v12yk")
+animation = &"golpe"
+autoplay = "idle"
+frame_progress = 0.30607495
+
+[node name="Timer" type="Timer" parent="Jugador/Textura" unique_id=460129329]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador" unique_id=436218571]
+position = Vector2(0, 17)
+shape = SubResource("CapsuleShape2D_glrvs")
+
+[node name="DetectorBomba" type="Area2D" parent="Jugador" unique_id=634740875]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador/DetectorBomba" unique_id=1357942000]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Golpe" type="AudioStreamPlayer2D" parent="Jugador" unique_id=1929256898]
+stream = ExtResource("5_4vydk")
+
+[node name="Piso" parent="." unique_id=1589094114 instance=ExtResource("3_glrvs")]
+position = Vector2(544, 480)
+
+[node name="Piso2" parent="." unique_id=1545595286 instance=ExtResource("3_glrvs")]
+position = Vector2(608, 480)
+
+[node name="Piso3" parent="." unique_id=1105786075 instance=ExtResource("3_glrvs")]
+position = Vector2(480, 480)
+
+[node name="Piso4" parent="." unique_id=384766900 instance=ExtResource("3_glrvs")]
+position = Vector2(416, 480)
+
+[node name="Piso5" parent="." unique_id=1714104850 instance=ExtResource("3_glrvs")]
+position = Vector2(352, 480)
+
+[node name="Piso6" parent="." unique_id=2144244811 instance=ExtResource("3_glrvs")]
+position = Vector2(288, 480)
+
+[node name="Piso7" parent="." unique_id=2126372469 instance=ExtResource("3_glrvs")]
+position = Vector2(672, 480)
+
+[node name="Piso8" parent="." unique_id=316288828 instance=ExtResource("3_glrvs")]
+position = Vector2(736, 480)
+
+[node name="Item" parent="." unique_id=585595066 instance=ExtResource("4_v12yk")]
+position = Vector2(512, 144)
+
+[node name="Item2" parent="." unique_id=1059876804 instance=ExtResource("4_v12yk")]
+position = Vector2(576, 136)
+
+[node name="Item3" parent="." unique_id=121928733 instance=ExtResource("4_v12yk")]
+position = Vector2(480, 88)
+
+[node name="Item4" parent="." unique_id=1516751018 instance=ExtResource("4_v12yk")]
+position = Vector2(424, 88)
+
+[node name="Item5" parent="." unique_id=1636441031 instance=ExtResource("4_v12yk")]
+position = Vector2(560, 64)
+
+[node name="Item6" parent="." unique_id=1642042082 instance=ExtResource("4_v12yk")]
+position = Vector2(632, 104)

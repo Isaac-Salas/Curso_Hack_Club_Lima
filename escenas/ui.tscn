@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://vvt3einonijh"]
+
+[ext_resource type="Script" uid="uid://by6wka361shlm" path="res://scripts/ui.gd" id="1_hw6l8"]
+[ext_resource type="Script" uid="uid://c6c333nk2xelm" path="res://scripts/contador.gd" id="2_aa502"]
+
+[node name="Control" type="Control" unique_id=389482469]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hw6l8")
+
+[node name="Vida" type="Label" parent="." unique_id=1476451381]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+[node name="Timer" type="Timer" parent="." unique_id=362000340]
+one_shot = true
+
+[node name="Contador" type="Label" parent="." unique_id=386217664]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 40.0
+offset_bottom = 95.0
+script = ExtResource("2_aa502")

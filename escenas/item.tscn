@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://pbqjy20gh7rh"]
+
+[ext_resource type="Texture2D" uid="uid://bfoagwog1mpcs" path="res://sprites/Tiles/Double/bomb.png" id="1_wptg7"]
+[ext_resource type="Script" uid="uid://cd7uug8degcbq" path="res://scripts/item.gd" id="1_x8fkn"]
+[ext_resource type="Script" uid="uid://munhy2og3bny" path="res://scripts/detector_jugador.gd" id="2_ee6fw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+
+[node name="Item" type="RigidBody2D" unique_id=585595066]
+collision_layer = 2
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_x8fkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147046596]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1944519398]
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("1_wptg7")
+
+[node name="DetectorJugador" type="Area2D" parent="." unique_id=1446156658]
+script = ExtResource("2_ee6fw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorJugador" unique_id=679261266]
+shape = SubResource("RectangleShape2D_g4v7s")
+debug_color = Color(0.9137255, 0.16078432, 0.60784316, 0)

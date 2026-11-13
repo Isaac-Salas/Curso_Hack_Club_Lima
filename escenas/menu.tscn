@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dq5ijgpjmx3fg"]
+
+[ext_resource type="Script" uid="uid://0luww6i1ntwa" path="res://scripts/menu.gd" id="1_vdanu"]
+[ext_resource type="PackedScene" uid="uid://cbfl02oewahsw" path="res://escenas/mundo.tscn" id="2_d7r87"]
+
+[node name="Menu" type="Control" unique_id=738667622]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vdanu")
+siguiente_escena = ExtResource("2_d7r87")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1825601095]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -33.0
+offset_right = 23.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=404919114]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1892528730]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
